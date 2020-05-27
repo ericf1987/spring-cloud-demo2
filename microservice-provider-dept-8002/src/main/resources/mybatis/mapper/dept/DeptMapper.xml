@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaopay.dao.DeptMapper">
+
+
+    <sql id="queryDept">
+        SELECT dpt.`dept_no` deptNo, dpt.`dept_name` deptName, dpt.`db_source` dbSource
+        FROM clouddb02.`dept` dpt
+    </sql>
+
+    <select id="findDeptByNo" resultType="com.xiaopay.entity.Dept" parameterType="java.lang.Integer">
+        <include refid="queryDept"/>
+        WHERE dpt.`dept_no` = #{deptNo}
+    </select>
+
+    <select id="findAllDept" resultType="com.xiaopay.entity.Dept" parameterType="java.lang.Integer">
+        <include refid="queryDept"/>
+    </select>
+
+    <insert id="addDept" parameterType="com.xiaopay.entity.Dept">
+        INSERT INTO dept(dept_name, db_source) VALUES(#{deptName}, DATABASE())
+    </insert>
+
+</mapper>
