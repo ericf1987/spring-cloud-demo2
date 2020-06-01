@@ -24,6 +24,8 @@
         <module>microservice-eureka-7002</module>
         <module>microservice-eureka-7003</module>
         <module>microservice-provider-dept-8002</module>
+        <module>microservice-consumer-dept-feign</module>
+        <module>microservice-provider-dept-hystrix-8001</module>
     </modules>
 
     <name>spring-cloud-demo2</name>
@@ -46,8 +48,11 @@
         <springboot-devtools.version>2.1.5.RELEASE</springboot-devtools.version>
         <eureka.server.version>2.1.5.RELEASE</eureka.server.version>
         <eureka.client.version>2.1.5.RELEASE</eureka.client.version>
-        <eureka.config.version>2.1.6.RELEASE</eureka.config.version>
+        <eureka.config.version>2.1.5.RELEASE</eureka.config.version>
         <ribbon.version>2.1.5.RELEASE</ribbon.version>
+        <openfeign.version>2.1.5.RELEASE</openfeign.version>
+        <hystrix.version>2.2.3.RELEASE</hystrix.version>
+        <hystrix.dashboard.version>2.2.3.RELEASE</hystrix.dashboard.version>
     </properties>
 
     <dependencies>
